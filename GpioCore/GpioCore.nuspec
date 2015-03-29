@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/piofthings/piofthings/blob/master/LICENSE</licenseUrl>
+    <projectUrl>http://piofthings.net</projectUrl>
+    <iconUrl>http://piofthings.github.io/images/PioT.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>First release of PiOfThings package</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>RaspberryPi IoT</tags>
+  </metadata>
+</package>
