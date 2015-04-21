@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
+# Visual Studio 2012
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GpioCore", "GpioCore\GpioCore.csproj", "{2382219F-1155-4917-8BEE-672949829EA9}"
@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DB957A
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Piofthings.Test", "Piofthings.Test\Piofthings.Test.csproj", "{99BF4F1D-511B-467F-B5DD-5A50DDC6E987}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,10 +26,16 @@ Global
 		{2382219F-1155-4917-8BEE-672949829EA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2382219F-1155-4917-8BEE-672949829EA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2382219F-1155-4917-8BEE-672949829EA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99BF4F1D-511B-467F-B5DD-5A50DDC6E987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99BF4F1D-511B-467F-B5DD-5A50DDC6E987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99BF4F1D-511B-467F-B5DD-5A50DDC6E987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99BF4F1D-511B-467F-B5DD-5A50DDC6E987}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CD2CE894-534E-4B1C-AE83-D7E4E3B41AE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CD2CE894-534E-4B1C-AE83-D7E4E3B41AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD2CE894-534E-4B1C-AE83-D7E4E3B41AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD2CE894-534E-4B1C-AE83-D7E4E3B41AE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

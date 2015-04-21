@@ -108,7 +108,7 @@ namespace PiOfThings.GpioUtils
 			return GPIOToPin [gpioNumber];
 		}
 
-		public static GpioId GetGPIOId(int pin)
+		public static GpioId GetGpioId(int pin)
 		{
 			if (pin > 0 && pin <= 40) 
 			{

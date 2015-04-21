@@ -9,6 +9,7 @@ using PiOfThings.GpioUtils;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Diagnostics;
 
 namespace PiOfThings.GpioCore
 {
@@ -69,13 +70,13 @@ namespace PiOfThings.GpioCore
 				}
 				else
 				{
-					Console.WriteLine ("Failed to WriteToPin: " + CurrentPin.ToString ("D") + " Check if Pin selection succeeded earlier.");
+					Debug.WriteLine ("Failed to WriteToPin: " + CurrentPin.ToString ("D") + " Check if Pin selection succeeded earlier.");
 					return false;
 				}
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine ("Failed to WriteToPin: " + CurrentPin.ToString ("D") + " " + ex.Message + "\n" + ex.StackTrace);
+				Debug.WriteLine ("Failed to WriteToPin: " + CurrentPin.ToString ("D") + " " + ex.Message + "\n" + ex.StackTrace);
 			}
 			return false;
 		}
@@ -86,11 +87,12 @@ namespace PiOfThings.GpioCore
 			try
 			{
 				string state = File.ReadAllText (String.Format ("{0}gpio{1}/value", GPIO_ROOT_DIR, pin.ToString ("D")));
-				currentState = (state == "1" ? GpioPinState.High : GpioPinState.Low);			
+				Debug.WriteLine("State: " + state);
+				currentState = int.Parse(state) == 1 ? GpioPinState.High : GpioPinState.Low;			
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine ("Failed to ReadFromPin: " + pin.ToString ("D") + " " + ex.Message + "\n" + ex.StackTrace);
+				Debug.WriteLine ("Failed to ReadFromPin: " + pin.ToString ("D") + " " + ex.Message + "\n" );
 			}
 			return currentState;
 		}
@@ -106,7 +108,7 @@ namespace PiOfThings.GpioCore
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine ("Failed to ReleasePin: " + pin.ToString ("D") + " " + ex.Message + "\n" + ex.StackTrace);
+				Debug.WriteLine ("Failed to ReleasePin: " + pin.ToString ("D") + " " + ex.Message + "\n" + ex.StackTrace);
 			}
 			return false;
 		}
@@ -137,11 +139,11 @@ namespace PiOfThings.GpioCore
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine ("Failed to ReservePin: " + pin.ToString ("D") + " " + ex.Message + "\n" + ex.StackTrace);
-				Console.WriteLine ("Attempting to release pin");
+				Debug.WriteLine ("Failed to ReservePin: " + pin.ToString ("D") + " " + ex.Message + "\n" + ex.StackTrace);
+				Debug.WriteLine ("Attempting to release pin");
                 if (ReleasePin(pin))
                 {
-                    Console.WriteLine("Release pin successfully, please retry Select.");
+                    Debug.WriteLine("Release pin successfully, please retry Select.");
                 }
 			}
 			return false;
